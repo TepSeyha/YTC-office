@@ -1,13 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font for Khmer */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;700&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Noto Sans Khmer', sans-serif;
+  background-color: #f9fafb;
+}
+/* 🟢 Animation សម្រាប់ Marquee (រត់រំកិល) */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+/* 🟢 បញ្ឈប់ពេល Hover (ជម្រើស) */
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🟢 Font សម្រាប់ភាសាអង់គ្លេស (English) */
+.font-english,
+body.font-english,
+body.font-english * {
+  font-family: "Chewy", system-ui, cursive !important;
+}
+
+/* 🟢 Font សម្រាប់ភាសាខ្មែរ (Khmer) - Kantumruy Pro គាំទ្រខ្មែរពិតប្រាកដ */
+.font-khmer,
+body.font-khmer,
+body.font-khmer * {
+  font-family: "Kantumruy Pro", "Noto Sans Khmer", sans-serif !important;
+}
+
+/* 🟢 Font Default */
+body {
+  font-family: "Kantumruy Pro", sans-serif;
+  transition: font-family 0.3s ease;
 }
